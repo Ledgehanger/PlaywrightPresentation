@@ -1,0 +1,16 @@
+<div class="navbar">
+  <img src="/skatepark_logo.png" alt="Skatepark Logo"/>
+  <a href="#home">Home</a>
+  <a href="#order">Order</a>
+  <div class="dropdown">
+    <button class="dropdown-button">
+      Hello, {{ this.userName }}
+      <fa-icon [icon]="faCaretDown"/>
+    </button>
+    <div class="dropdown-content">
+      <a href="#details">Account Details</a>
+      <a href="#order-details">Your Orders</a>
+      <a href="#logout">Logout</a>
+    </div>
+  </div>
+</div>
