@@ -1,21 +1,23 @@
-import {Component} from '@angular/core';
-import {Home} from './home/home';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import {Navbar} from './navbar/navbar';
+import {TableForm} from './table-form/table-form';
 
 @Component({
   selector: 'app-root',
-  imports: [Home],
-  template: `
-    <main>
-      <header class="brand-name">
-        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
-      </header>
-      <section class="content">
-        <app-home></app-home>
-      </section>
-    </main>
-  `,
-  styleUrls: ['./app.css'],
+  imports: [RouterOutlet, Navbar, TableForm],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
 export class App {
-  title = 'homes';
+  protected readonly title = signal('simple-web-app');
+
+
+  public doSomethingCool():void {
+    console.log('do a kick flip')
+  }
+
+  public doSomethingElse():void {
+    console.log('why are you tony hawk')
+  }
 }
